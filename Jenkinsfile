@@ -9,7 +9,7 @@ node{
    }
   stage('Deploy to Tomcat'){
   sshagent(['tomcat-admin']) {
-    bat 'scp -o StrictHostKeyChecking=no target/*.war mamireddy@10.11.110.188:C:/Program Files/Tomcat8/webapps'
+    bat 'scp -o StrictHostKeyChecking=no target/*.war username@ipaddress:C:/Program Files/Tomcat8/webapps'
    }
   }
 }
