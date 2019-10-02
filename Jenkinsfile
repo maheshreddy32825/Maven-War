@@ -8,8 +8,6 @@ node{
      bat "mvn package"
    }
   stage('Deploy to Tomcat'){
-  sshagent(['tomcat-admin']) {
-    bat 'scp -o StrictHostKeyChecking=no target/*.war admin@10.11.110.186:C:/Users/mamireddy/tools/apache-tomcat-8.5.46/webapps'
-   }
+  deploy adapters: [tomcat8(credentialsId: 'admin', path: '', url: 'http://localhost:8080')], contextPath: null, war: 'target/war.war'
   }
 }
