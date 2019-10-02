@@ -26,9 +26,9 @@
                 </manifest>
                 <archive>
                     <manifestEntries>
-                        <Specification-Title>${project.name}</Specification-Title>
-                        <Specification-Version>${project.version}</Specification-Version>
-                        <Implementation-Version>${build.number}</Implementation-Version>
+                        <Project-Title>${project.name}</Project-Title>
+                        <Project-Version>${project.version}</Project-Version>
+                        <Build-Number>${build.number}</Build-Number>
                     </manifestEntries>
                 </archive>
             </configuration>
