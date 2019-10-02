@@ -8,6 +8,6 @@ node{
      bat "mvn clean install -Dbuild.number=${BUILD_NUMBER}"
    }
   stage('Deploy to Tomcat'){
-  deploy adapters: [tomcat8(credentialsId: 'admin', path: '', url: 'http://localhost:8080')], contextPath: null, war: 'target/war.war'
+  deploy adapters: [tomcat8(credentialsId: 'admin', path: '', url: 'http://localhost:8080')], contextPath: null, war: 'target/*.war'
   }
 }
