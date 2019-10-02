@@ -5,7 +5,7 @@
   <artifactId>war</artifactId>
   <packaging>war</packaging>
   <version>${project.name}-${build.number}</version>
-  <name>war Maven Webapp</name>
+  <name>DeployWar</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
