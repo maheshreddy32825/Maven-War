@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2>Hello Mahesh This is a war file from Eclipse!</h2>
+<h2>Hello World!</h2>
 </body>
 </html>
