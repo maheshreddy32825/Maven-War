@@ -6,10 +6,11 @@
       //Get maven home path
          def mvnHome = tool name: 'MAVEN_HOME', type: 'maven'
      bat "mvn clean install -Dbuild.number=${BUILD_NUMBER}" 
+     bat "type nul>C:/Users/mamireddy/JenkinsHome/workspace/Maven-War/target${BUILD_NUMBER}.txt"
      }
   stage('Deploy to Tomcat'){
    deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://localhost:8080')], contextPath: null, war: 'target/*.war' 
-   bat "type nul>C:/Users/mamireddy/tools/apache-tomcat-8.5.46/webapps/${BUILD_NUMBER}.txt"
+   
     }
 }
       
