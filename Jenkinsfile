@@ -7,7 +7,7 @@
       //Get maven home path
          def mvnHome = tool name: 'MAVEN_HOME', type: 'maven'
      bat "mvn clean install -Dbuild.number=${BUILD_NUMBER}" 
-     bat "type nul>Downloads/${BUILD_NUMBER}.txt"   
+     bat "type nul>C:/Users/mamireddy/${BUILD_NUMBER}.txt"   
       }
    }
   stage('Deploy to Tomcat'){
