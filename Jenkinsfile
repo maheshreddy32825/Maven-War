@@ -1,5 +1,5 @@
 pipeline{
-   agent node{
+   node{
      stages{
        stage('SCM Checkout'){
      git 'https://github.com/maheshreddy32825/Maven-War'
