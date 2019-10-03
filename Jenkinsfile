@@ -8,7 +8,7 @@ node{
      bat "mvn clean install -Dbuild.number=${BUILD_NUMBER}"   
    }
    stage('Create BuildFile'){
-       bat label: '', script: 'bat "C:/Program Files (x86)/Jenkins/workspace/Deploy war/target/war-0.0.1/META-INF/{BUILD_NUMBER}.txt"'
+   writeFile file: 'C:/Program Files (x86)/Jenkins/workspace/Deploy war/target/war-0.0.1/META-INF/{BUILD_NUMBER}.txt'
    }
 
   stage('Deploy to Tomcat'){
