@@ -4,7 +4,7 @@
   <groupId>com.maven.war</groupId>
   <artifactId>war</artifactId>
   <packaging>war</packaging>
-  <version>${build.number}</version>
+  <version>0.0.1</version>
   <name>DeployWar</name>
   <url>http://maven.apache.org</url>
   <dependencies>
