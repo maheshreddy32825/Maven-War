@@ -10,7 +10,6 @@ node{
    stage('Create BuildFile'){
    writeFile file: 'C:/Program Files (x86)/Jenkins/workspace/Deploy war/target/war-0.0.1/META-INF/{BUILD_NUMBER}.txt'
    }
-
   stage('Deploy to Tomcat'){
   deploy adapters: [tomcat8(credentialsId: 'admin', path: '', url: 'http://localhost:8080')], contextPath: null, war: 'target/*.war'
    }
