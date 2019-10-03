@@ -1,10 +1,12 @@
-node{
-  stage('SCM Checkout'){
+pipeline{
+   agent node{
+     stages{
+       stage('SCM Checkout'){
      git 'https://github.com/maheshreddy32825/Maven-War'
   }
    stage('Compile-package'){
       //Get maven home path
-      steps{
+      steps {
          def mvnHome = tool name: 'MAVEN_HOME', type: 'maven'
      bat "mvn clean install -Dbuild.number=${BUILD_NUMBER}" 
      bat "type nul> C:/Program Files (x86)/Jenkins/workspace/Deploy war/target/${BUILD_NUMBER}.txt"   
@@ -14,3 +16,11 @@ node{
   deploy adapters: [tomcat8(credentialsId: 'admin', path: '', url: 'http://localhost:8080')], contextPath: null, war: 'target/*.war'
    }
 }
+    
+}
+     
+ }
+
+  
+
+
