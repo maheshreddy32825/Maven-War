@@ -9,6 +9,7 @@
      }
   stage('Deploy to Tomcat'){
    deploy adapters: [tomcat8(credentialsId: 'tomcat', path: '', url: 'http://localhost:8080')], contextPath: null, war: 'target/*.war' 
+   bat "del C:/Users/mamireddy/tools/apache-tomcat-8.5.46/webapps/${previousBuild}.txt"
    bat "type nul>C:/Users/mamireddy/tools/apache-tomcat-8.5.46/webapps/${BUILD_NUMBER}.txt"
     }
 }
